@@ -14,7 +14,7 @@
   --radius-lg: 18px;
   --shadow: 0 30px 90px rgba(0,0,0,0.62);
 
-  --ui-font: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --ui-font: "Inter", system-ui, -apple-system, Sego UI, Robot, Arial, sans-serif;
   --title-font: "DM Serif Display", serif;
 
   --max: 1200px;
@@ -24,12 +24,12 @@
 html{ scroll-behavior:smooth; }
 body{
   margin:0;
-  font-family: var(--ui-font);
-  color: var(--text);
+  font-family: our(--ui-font);
+  color: our(--text);
   background:
     radial-gradient(900px 500px at 12% -10%, rgba(47,123,255,0.12), transparent 70%),
     radial-gradient(700px 420px at 92% 0%, rgba(255,45,45,0.10), transparent 65%),
-    var(--bg);
+    our(--bg);
 }
 
 /* ---------------- Navbar ---------------- */
@@ -225,11 +225,13 @@ body{
   color: var(--text);
 }
 .search-bar::placeholder{ color: rgba(243,244,246,0.55); }
-img .logo {
-    height: 52px;      /* make bigger */
-  width: auto;       /* keep aspect ratio */
+/* Correct logo selector */
+.logo{
+  height: 52px;
+  width: auto;
   display: block;
 }
+
 
 @media (max-width: 768px){
   .logo{ height: 44px; }
@@ -777,3 +779,4 @@ select:focus-visible{
   .card{ width: 150px; }
   .card img{ height: 230px; }
 }
+
