@@ -25,16 +25,19 @@ async function fetchTrendingTodayAll() {
 
 async function fetchTrendingAnime() {
   let allResults = [];
+
   for (let page = 1; page <= 3; page++) {
-    const res = await fetch(`${BASE_URL}/trending/tv/week?api_key=${API_KEY}&page=${page}`);
-    const data = await res.json();
-    const filtered = data.results.filter(item =>
-      item.original_language === 'and' && item.genre_ids.includes(16)
+    const res = await fetch(
+      `${BASE_URL}/discover/tv?api_key=${API_KEY}` +
+      `&with_genres=16&with_original_language=ja&sort_by=popularity.desc&page=${page}`
     );
-    allResults = allResults.concat(filtered);
+    const data = await res.json();
+    allResults = allResults.concat(data.results || []);
   }
+
   return allResults;
 }
+
 
 async function fetchTVDetails(tvID) {
   const res = await fetch(`${BASE_URL}/tv/${tvID}?api_key=${API_KEY}`);
@@ -370,4 +373,5 @@ async function init() {
 init();// At the end of init(), after displayList calls:
 document.getElementById("preloader")?.classList.add("is-hidden");
 setTimeout(() => document.getElementById("preloader")?.remove(), 450);
+
 
