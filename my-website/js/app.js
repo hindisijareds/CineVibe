@@ -1,4 +1,4 @@
-const API_KEY = 'a1e72fd93ed59f56e6332813b9f8dcae';
+const API_KEY = 'f83519e527323b49c08b0c3a6fc35ec4';
 const BASE_URL = 'https://api.themoviedb.org/3';
 
 // Keep your original IMG_URL for banner/backdrops
@@ -29,20 +29,20 @@ async function fetchTrendingAnime() {
     const res = await fetch(`${BASE_URL}/trending/tv/week?api_key=${API_KEY}&page=${page}`);
     const data = await res.json();
     const filtered = data.results.filter(item =>
-      item.original_language === 'ja' && item.genre_ids.includes(16)
+      item.original_language === 'and' && item.genre_ids.includes(16)
     );
     allResults = allResults.concat(filtered);
   }
   return allResults;
 }
 
-async function fetchTVDetails(tvId) {
-  const res = await fetch(`${BASE_URL}/tv/${tvId}?api_key=${API_KEY}`);
+async function fetchTVDetails(tvID) {
+  const res = await fetch(`${BASE_URL}/tv/${tvID}?api_key=${API_KEY}`);
   return res.json();
 }
 
-async function fetchSeasonDetails(tvId, seasonNumber) {
-  const res = await fetch(`${BASE_URL}/tv/${tvId}/season/${seasonNumber}?api_key=${API_KEY}`);
+async function fetchSeasonDetails(tvID, seasonNumber) {
+  const res = await fetch(`${BASE_URL}/tv/${tvID}/season/${seasonNumber}?api_key=${API_KEY}`);
   return res.json();
 }
 
@@ -370,3 +370,4 @@ async function init() {
 init();// At the end of init(), after displayList calls:
 document.getElementById("preloader")?.classList.add("is-hidden");
 setTimeout(() => document.getElementById("preloader")?.remove(), 450);
+
