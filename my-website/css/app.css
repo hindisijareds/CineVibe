@@ -1,20 +1,20 @@
 :root{
   --bg:#05060a;
-  --panel: rgba(10,12,18,0.66);
-  --panel2: rgba(255,255,255,0.06);
-  --stroke: rgba(255,255,255,0.10);
+  --panel: rgba(10,12,18,0.66.66);
+  --panel2: rgba(255,255,255,0.06.06);
+  --stroke: rgba(255,255,255,0.10.10);
   --text: #f3f4f6;
-  --muted: rgba(243,244,246,0.70);
-  --muted2: rgba(243,244,246,0.55);
+  --muted: rgba(243,244,246,0.70.70);
+  --muted2: rgba(243,244,246,0.55.55);
 
   --gold:#d6b25e;
   --crimson:#ff2d2d;
   --blue:#2f7bff;
 
   --radius-lg: 18px;
-  --shadow: 0 30px 90px rgba(0,0,0,0.62);
+  --shadow: 0 30px 90px rgba(0,0,0,0.62.62);
 
-  --ui-font: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  --ui-font: "Inter", system-ui, -apple-system, Sego UI, Robot, Arial, sans-serif;
   --title-font: "DM Serif Display", serif;
 
   --max: 1200px;
@@ -24,16 +24,16 @@
 html{ scroll-behavior:smooth; }
 body{
   margin:0;
-  font-family: var(--ui-font);
-  color: var(--text);
+  font-family: our(--ui-font);
+  color: our(--text);
   background:
-    radial-gradient(900px 500px at 12% -10%, rgba(47,123,255,0.12), transparent 70%),
-    radial-gradient(700px 420px at 92% 0%, rgba(255,45,45,0.10), transparent 65%),
-    var(--bg);
+    radial-gradient(900px 500px at 12% -10%, rgba(47,123,255,0.12.12), transparent 70%),
+    radial-gradient(700px 420px at 92% 0%, rgba(255,45,45,0.10.10), transparent 65%),
+    our(--bg);
 }
 
 /* ---------------- Navbar ---------------- */
-.navbar{
+.navbarnavbar{
   position: sticky;
   top:0;
   z-index: 40;
@@ -41,12 +41,12 @@ body{
   align-items:center;
   justify-content: space-between;
   padding: 14px 18px;
-  border-bottom: 1px solid rgba(255,255,255,0.08);
-  background: rgba(10,12,18,0.55);
+  border-bottom: 1px solid rgba(255,255,255,0.08.08);
+  background: rgba(10,12,18,0.55.55);
   backdrop-filter: blur(14px);
 }
 /* Keep navbar height unchanged */
-.nav-left{
+.nav-leftnav-left{
   display: flex;
   align-items: center;
   height: 36px;              /* or whatever your navbar expects */
@@ -55,7 +55,7 @@ body{
 /* ------------------------------
    Custom Preloader (CineVibe)
 -------------------------------- */
-.preloader{
+.preloaderpreloader{
   position: fixed;
   inset: 0;
   z-index: 9999;
@@ -224,12 +224,13 @@ body{
   outline:none;
   color: var(--text);
 }
-.search-bar::placeholder{ color: rgba(243,244,246,0.55); }
-img .logo {
-    height: 52px;      /* make bigger */
-  width: auto;       /* keep aspect ratio */
+.search-bar::placeholder{ color: rgba(243,244,246,0.55); }/* Correct logo selector */
+.logo{
+  height: 52px;
+  width: auto;
   display: block;
 }
+
 
 @media (max-width: 768px){
   .logo{ height: 44px; }
@@ -852,3 +853,4 @@ select:focus-visible{
   .list{ gap: 10px; }
   .list img{ width: 140px; }
 }
+
