@@ -863,3 +863,10 @@ select:focus-visible{
   .list{ gap: 10px; }
   .list img{ width: 140px; }
 }
+
+/* Reserve space for bottom dock while modal is open */
+@media (max-width: 768px){
+  .modal-content{
+    padding-bottom: calc(140px + env(safe-area-inset-bottom)); /* space for dock */
+  }
+}
