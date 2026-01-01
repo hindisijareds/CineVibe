@@ -1,20 +1,20 @@
 :root{
   --bg:#05060a;
-  --panel: rgba(10,12,18,0.66.66);
-  --panel2: rgba(255,255,255,0.06.06);
-  --stroke: rgba(255,255,255,0.10.10);
+  --panel: rgba(10,12,18,0.66);
+  --panel2: rgba(255,255,255,0.06);
+  --stroke: rgba(255,255,255,0.10);
   --text: #f3f4f6;
-  --muted: rgba(243,244,246,0.70.70);
-  --muted2: rgba(243,244,246,0.55.55);
+  --muted: rgba(243,244,246,0.70);
+  --muted2: rgba(243,244,246,0.55);
 
   --gold:#d6b25e;
   --crimson:#ff2d2d;
   --blue:#2f7bff;
 
   --radius-lg: 18px;
-  --shadow: 0 30px 90px rgba(0,0,0,0.62.62);
+  --shadow: 0 30px 90px rgba(0,0,0,0.62);
 
-  --ui-font: "Inter", system-ui, -apple-system, Sego UI, Robot, Arial, sans-serif;
+  --ui-font: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   --title-font: "DM Serif Display", serif;
 
   --max: 1200px;
@@ -24,16 +24,16 @@
 html{ scroll-behavior:smooth; }
 body{
   margin:0;
-  font-family: our(--ui-font);
-  color: our(--text);
+  font-family: var(--ui-font);
+  color: var(--text);
   background:
-    radial-gradient(900px 500px at 12% -10%, rgba(47,123,255,0.12.12), transparent 70%),
-    radial-gradient(700px 420px at 92% 0%, rgba(255,45,45,0.10.10), transparent 65%),
-    our(--bg);
+    radial-gradient(900px 500px at 12% -10%, rgba(47,123,255,0.12), transparent 70%),
+    radial-gradient(700px 420px at 92% 0%, rgba(255,45,45,0.10), transparent 65%),
+    var(--bg);
 }
 
 /* ---------------- Navbar ---------------- */
-.navbarnavbar{
+.navbar{
   position: sticky;
   top:0;
   z-index: 40;
@@ -41,12 +41,12 @@ body{
   align-items:center;
   justify-content: space-between;
   padding: 14px 18px;
-  border-bottom: 1px solid rgba(255,255,255,0.08.08);
-  background: rgba(10,12,18,0.55.55);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  background: rgba(10,12,18,0.55);
   backdrop-filter: blur(14px);
 }
 /* Keep navbar height unchanged */
-.nav-leftnav-left{
+.nav-left{
   display: flex;
   align-items: center;
   height: 36px;              /* or whatever your navbar expects */
@@ -55,7 +55,7 @@ body{
 /* ------------------------------
    Custom Preloader (CineVibe)
 -------------------------------- */
-.preloaderpreloader{
+.preloader{
   position: fixed;
   inset: 0;
   z-index: 9999;
@@ -224,13 +224,12 @@ body{
   outline:none;
   color: var(--text);
 }
-.search-bar::placeholder{ color: rgba(243,244,246,0.55); }/* Correct logo selector */
-.logo{
-  height: 52px;
-  width: auto;
+.search-bar::placeholder{ color: rgba(243,244,246,0.55); }
+img .logo {
+    height: 52px;      /* make bigger */
+  width: auto;       /* keep aspect ratio */
   display: block;
 }
-
 
 @media (max-width: 768px){
   .logo{ height: 44px; }
@@ -778,79 +777,3 @@ select:focus-visible{
   .card{ width: 150px; }
   .card img{ height: 230px; }
 }
-/* ---------------------------------
-   Mobile Header Cleanup (<= 768px)
-   Use bottom dock for nav, keep only logo + search on top
-----------------------------------*/
-@media (max-width: 768px){
-  /* hide top nav links (you already have a mobile dock) */
-  .nav-links .nav-item{ display: none !important; }
-
-  /* keep search */
-  .nav-links{ gap: 10px; width: 100%; }
-  .search-wrap{
-    flex: 1;
-    min-width: 0;
-  }
-  .search-bar{
-    width: 100% !important;          /* override your min(56vw,...) rule */
-    max-width: none !important;
-  }
-
-  /* keep navbar compact */
-  .navbar{
-    padding: 10px 12px;
-  }
-
-  /* allow big logo without increasing header height too much */
-  .nav-left{
-    width: 52px;
-    flex: 0 0 auto;
-  }
-  .nav-left img,
-  .nav-left img.logo{
-    height: 58px;
-    width: auto;
-    transform: scale(1.18);
-    transform-origin: left center;
-  }
-
-  /* iOS safe area + ensure dock never overlaps content */
-  .mobile-dock{
-    bottom: calc(12px + env(safe-area-inset-bottom));
-  }
-  .page{
-    padding-bottom: calc(110px + env(safe-area-inset-bottom));
-  }
-}
-@media (max-width: 420px){
-  .nav-left img,
-  .nav-left img.logo{
-    height: 54px;
-    transform: scale(1.12);
-  }
-}
-
-
-/* Home rows: prevent title + View all from squishing */
-@media (max-width: 768px){
-  .row-head{
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: flex-start;
-  }
-  .row-head h2{
-    font-size: 18px;
-    line-height: 1.2;
-  }
-  .row-head .view-all{
-    margin-left: 0;
-  }
-}
-
-/* Posters a bit smaller on very small phones */
-@media (max-width: 480px){
-  .list{ gap: 10px; }
-  .list img{ width: 140px; }
-}
-
