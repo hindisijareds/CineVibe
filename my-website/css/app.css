@@ -830,3 +830,25 @@ select:focus-visible{
   }
 }
 
+
+/* Home rows: prevent title + View all from squishing */
+@media (max-width: 768px){
+  .row-head{
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: flex-start;
+  }
+  .row-head h2{
+    font-size: 18px;
+    line-height: 1.2;
+  }
+  .row-head .view-all{
+    margin-left: 0;
+  }
+}
+
+/* Posters a bit smaller on very small phones */
+@media (max-width: 480px){
+  .list{ gap: 10px; }
+  .list img{ width: 140px; }
+}
