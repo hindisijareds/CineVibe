@@ -30,11 +30,12 @@
   border-color: rgba(214,178,94,0.35);
   background: rgba(214,178,94,0.14);
 }
-img .logo {
-    height: 52px;      /* make bigger */
-  width: auto;       /* keep aspect ratio */
+.logo{
+  height: 52px;
+  width: auto;
   display: block;
 }
+
 
 @media (max-width: 768px){
   .logo{ height: 44px; }
@@ -98,5 +99,6 @@ img .logo {
   .page-title{ font-size: 22px; }
   .grid{ gap: 10px; }
 }
+
 
 
